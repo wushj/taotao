@@ -1,0 +1,28 @@
+# Maven #
+target/
+*.releaseBackup
+
+# IDE support files
+/.classpath
+/.launch
+/.project
+/.settings
+/*.launch
+/*.tmproj
+/ivy*
+/eclipse
+*.iml
+*.ipr
+*.iws
+.idea/
+
+# Package Files #
+*.jar
+*.war
+*.ear
+*.zip
+*.tar.gz
+*.rar
+*.class
+
+
