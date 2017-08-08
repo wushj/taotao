@@ -20,6 +20,11 @@
             <groupId>com.taotao</groupId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
+        <dependency>
+            <artifactId>taotao-manager-interface</artifactId>
+            <groupId>com.taotao</groupId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
 
         <!-- Spring -->
         <dependency>
@@ -75,6 +80,31 @@
             <version>${jsp-api.version}</version>
             <scope>provided</scope>
         </dependency>
+
+        <!-- dubbo相关的jar包 -->
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>dubbo</artifactId>
+            <exclusions>
+                <exclusion>
+                    <artifactId>spring</artifactId>
+                    <groupId>org.springframework</groupId>
+                </exclusion>
+                <exclusion>
+                    <artifactId>netty</artifactId>
+                    <groupId>org.jboss.netty</groupId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.zookeeper</groupId>
+            <artifactId>zookeeper</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.github.sgroschupf</groupId>
+            <artifactId>zkclient</artifactId>
+        </dependency>
+
     </dependencies>
 
     <build>
