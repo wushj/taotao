@@ -24,7 +24,7 @@ public class TestSolrJ {
 		//创建一个文档对象SolrInputDocument
 		SolrInputDocument document = new SolrInputDocument();
 		//向文档中添加域，必须有id域，域的名称必须在schema.xml中定义
-		document.addField("id", "123");
+		document.addField("id", "test001");
 		document.addField("item_title", "测试商品3");
 		document.addField("item_price", 1000);
 		//把文档对象写入索引库
@@ -49,7 +49,7 @@ public class TestSolrJ {
 	}
 	
 	@Test
-	public void searchDocumet() throws Exception {
+	public void searchDocument() throws Exception {
 		//创建一个SolrServer对象
 		SolrServer solrServer = new HttpSolrServer("http://119.23.214.174:8880/solr/collection1");
 		//创建一个SolrQuery对象
