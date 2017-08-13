@@ -5,19 +5,19 @@
     <modelVersion>4.0.0</modelVersion>
     <packaging>pom</packaging>
 
+    <modules>
+        <module>/taotao-search-interface</module>
+        <module>/taotao-search-service</module>
+    </modules>
+
     <parent>
         <artifactId>taotao-parent</artifactId>
         <groupId>com.taotao</groupId>
         <version>0.0.1-SNAPSHOT</version>
     </parent>
 
-    <artifactId>taotao-content</artifactId>
+    <artifactId>taotao-search</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-
-    <modules>
-        <module>/taotao-content-interface</module>
-        <module>/taotao-content-service</module>
-    </modules>
 
     <dependencies>
         <dependency>
@@ -34,7 +34,7 @@
                 <artifactId>tomcat7-maven-plugin</artifactId>
                 <configuration>
                     <path>/</path>
-                    <port>8083</port>
+                    <port>8084</port>
                 </configuration>
             </plugin>
         </plugins>

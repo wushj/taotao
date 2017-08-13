@@ -11,12 +11,10 @@
         <version>0.0.1-SNAPSHOT</version>
     </parent>
 
-
     <artifactId>taotao-portal-web</artifactId>
     <version>0.0.1-SNAPSHOT</version>
 
     <dependencies>
-
         <dependency>
             <artifactId>taotao-common</artifactId>
             <groupId>com.taotao</groupId>
