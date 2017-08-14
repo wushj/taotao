@@ -7,7 +7,14 @@ public class SearchResult implements Serializable{
 
 	private long totalPages;
 	private long recordCount;
+	private long pageCount;
 	private List<SearchItem> itemList;
+	public long getPageCount() {
+		return pageCount;
+	}
+	public void setPageCount(long pageCount) {
+		this.pageCount = pageCount;
+	}
 	public long getTotalPages() {
 		return totalPages;
 	}
