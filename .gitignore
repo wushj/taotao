@@ -24,5 +24,6 @@ target/
 *.tar.gz
 *.rar
 *.class
+*.log
 
 
