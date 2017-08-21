@@ -24,5 +24,5 @@
 	<!-- 引用dubbo服务 -->
 	<dubbo:application name="taotao-item-web"/>
 	<dubbo:registry protocol="zookeeper" address="119.23.214.174:2180"/>
-	<!--<dubbo:reference interface="com.taotao.content.service.ContentService" id="contentService" />-->
+	<dubbo:reference interface="com.taotao.service.ItemService" id="itemService" />
 </beans>
