@@ -136,8 +136,28 @@ public class ItemServiceImpl implements ItemService {
 
 	@Override
 	public TbItemDesc getItemDescById(long itemId) {
-		TbItemDesc itemDesc = itemDescMapper.selectByPrimaryKey(itemId);
-		return itemDesc;
-	}
+        //查询数据库之前先查询缓存
+        try {
+            String json = jedisClient.get(ITEM_INFO + ":" + itemId  + ":DESC");
+            if (StringUtils.isNotBlank(json)) {
+                // 把json数据转换成pojo
+                TbItemDesc tbItemDesc = JsonUtils.jsonToPojo(json, TbItemDesc.class);
+                return tbItemDesc;
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        //缓存中没有查询数据库
+        TbItemDesc itemDesc = itemDescMapper.selectByPrimaryKey(itemId);
+        try {
+            //把查询结果添加到缓存
+            jedisClient.set(ITEM_INFO + ":" + itemId  + ":DESC", JsonUtils.objectToJson(itemDesc));
+            //设置过期时间，提高缓存的利用率
+            jedisClient.expire(ITEM_INFO + ":" + itemId  + ":DESC", TIME_EXPIRE);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return itemDesc;
+    }
 
 }
