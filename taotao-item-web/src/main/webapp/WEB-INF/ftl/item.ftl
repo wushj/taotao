@@ -53,7 +53,7 @@
 	<li id="summary-price">
 		<div class="dt">淘&nbsp;淘&nbsp;价：</div>
 		<div class="dd">
-			<strong class="p-price"  id="jd-price">￥${item.price / 100 }"</strong>
+			<strong class="p-price"  id="jd-price">￥${item.price / 100 }</strong>
 			<a id="notice-downp" href="#none" target="_blank" clstag="shangpin|keycount|product|jiangjia">(降价通知)</a>
 		</div>
 	</li>
@@ -139,52 +139,54 @@
 			</ul><!--choose end-->
 			<span class="clr"></span>
 		</div>
-		
-		<div id="preview">
-			<div id="spec-n1" class="jqzoom" clstag="shangpin|keycount|product|spec-n1">
-				<img data-img="1" width="350" height="350" src="${item.images[0]}" alt="${item.title}"  jqimg="${item.images[0]}"/>
-			</div>
-					
-			<div id="spec-list" clstag="shangpin|keycount|product|spec-n5">
-				<a href="javascript:;" class="spec-control" id="spec-forward"></a>
-				<a href="javascript:;" class="spec-control" id="spec-backward"></a>
-				<div class="spec-items">
-					<ul class="lh">   
-						<#list item.images as pic>  
-							<#if pic_index == 0>
-								<li>
-									<img data-img="1" class="img-hover"  alt="${item.title}" src="${pic}" width="50" height="50" data-url="${pic}">
-								</li>
-							<#else>
-								<li>
-									<img data-img="1" alt="${item.title}" src="${pic}" width="50" height="50" data-url="${pic}">
-								</li>
-							</#if>
-						</#list>
-					</ul>
-				</div>
-			</div>
-			<div id="short-share">
-				<div id="view-bigimg" class="fl"><b></b><a href="http://www.jd.com/bigimage.aspx?id=1221882" target="_blank">查看大图</a></div>
-				<div id="share-list" class="share-list" clstag="shangpin|keycount|product|share">
-	<div class="share-bd">
-		<em class="share-hd">分享到：</em>
-		<ul class="share-list-item clearfix">
-			<li><a href="javascript:;" id="site-sina" title="分享到新浪微博">新浪微博</a></li>
-			<li><a href="javascript:;" id="site-qq" title="分享到给QQ好友">QQ</a></li>
-			<li><a href="javascript:;" id="site-qzone" title="分享到腾讯微博">腾讯微博</a></li>
-			<li><a href="javascript:;" id="site-renren" title="分享到人人网">人人网</a></li>
-			<li><a href="javascript:;" id="site-kaixing" title="分享到开心网">开心网</a></li>
-			<li><a href="javascript:;" id="site-douban" title="分享到豆瓣">豆瓣</a></li>
-			<li><a href="javascript:;" id="site-msn" title="分享给MSN好友">MSN</a></li>
-			<li><a href="javascript:;" id="site-email" title="邮件分享给好友">邮件</a></li>
-		</ul>
-	</div>
-	<div class="share-ft"><b></b></div>
-</div>
-<div class="clb"></div>				
-			</div>
-		</div><!--preview end-->
+
+		<#if item.images??>
+            <div id="preview">
+                <div id="spec-n1" class="jqzoom" clstag="shangpin|keycount|product|spec-n1">
+                    <img data-img="1" width="350" height="350" src="${item.images[0]}" alt="${item.title}"  jqimg="${item.images[0]}"/>
+                </div>
+
+                <div id="spec-list" clstag="shangpin|keycount|product|spec-n5">
+                    <a href="javascript:;" class="spec-control" id="spec-forward"></a>
+                    <a href="javascript:;" class="spec-control" id="spec-backward"></a>
+                    <div class="spec-items">
+                        <ul class="lh">
+                            <#list item.images as pic>
+                                <#if pic_index == 0>
+                                    <li>
+                                        <img data-img="1" class="img-hover"  alt="${item.title}" src="${pic}" width="50" height="50" data-url="${pic}">
+                                    </li>
+                                <#else>
+                                    <li>
+                                        <img data-img="1" alt="${item.title}" src="${pic}" width="50" height="50" data-url="${pic}">
+                                    </li>
+                                </#if>
+                            </#list>
+                        </ul>
+                    </div>
+                </div>
+                <div id="short-share">
+                    <div id="view-bigimg" class="fl"><b></b><a href="http://www.jd.com/bigimage.aspx?id=1221882" target="_blank">查看大图</a></div>
+                    <div id="share-list" class="share-list" clstag="shangpin|keycount|product|share">
+                        <div class="share-bd">
+                            <em class="share-hd">分享到：</em>
+                            <ul class="share-list-item clearfix">
+                                <li><a href="javascript:;" id="site-sina" title="分享到新浪微博">新浪微博</a></li>
+                                <li><a href="javascript:;" id="site-qq" title="分享到给QQ好友">QQ</a></li>
+                                <li><a href="javascript:;" id="site-qzone" title="分享到腾讯微博">腾讯微博</a></li>
+                                <li><a href="javascript:;" id="site-renren" title="分享到人人网">人人网</a></li>
+                                <li><a href="javascript:;" id="site-kaixing" title="分享到开心网">开心网</a></li>
+                                <li><a href="javascript:;" id="site-douban" title="分享到豆瓣">豆瓣</a></li>
+                                <li><a href="javascript:;" id="site-msn" title="分享给MSN好友">MSN</a></li>
+                                <li><a href="javascript:;" id="site-email" title="邮件分享给好友">邮件</a></li>
+                            </ul>
+                        </div>
+                        <div class="share-ft"><b></b></div>
+                    </div>
+                    <div class="clb"></div>
+                </div>
+            </div><!--preview end-->
+        </#if>
 	</div><!--product-intro end-->
 </div>
 <div class="w">
